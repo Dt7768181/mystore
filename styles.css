@@ -23,15 +23,16 @@
 }
 .productBlock{
     padding: 20px;
+    background-color: #9ACBD0;
 }
 .box {
     margin: 20px;
     width: 400px;
     height: 200px;
-    background-color: #9ACBD0;
     padding: 20px;
     border-radius: 10px;
     transition: 1s;
+    background-color: white;
 }
 .box:hover{
     box-shadow: 10px 10px 10px #000;
