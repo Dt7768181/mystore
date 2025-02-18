@@ -1,28 +1,34 @@
 .container {
     margin: 0;
+    font-family: "Lucida Sans", Arial, sans-serif;
 }
 *{
     margin:0;
 }
 .header {
-    background-color: orangered;
+    background-color: #48A6A7;
     display: flex;
     justify-content: space-between;
     padding: 20px;
 }
+.navi{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .row{
     display: flex;
+    flex-wrap:wrap;
     justify-content: center;
-    padding: 10px ;
 }
 .productBlock{
-    background-color: bisque;
+    padding: 20px;
 }
 .box {
     margin: 20px;
-    width: 500px;
+    width: 400px;
     height: 200px;
-    background-color: white;
+    background-color: #9ACBD0;
     padding: 20px;
     border-radius: 10px;
     transition: 1s;
@@ -32,12 +38,58 @@
     transform: scale(1.1);
 }
 .cartBlock {
-    background-color: silver;
+    background-color: #F2EFE7;
     width: 300px;
     position: fixed;
-    top:0px;
+    top:0;
     left:100%;
     height: 100%;
     padding: 20px;
     transition: 2s;
+}
+.btncart{
+    padding: 10px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: #F2EFE7;
+}
+.login {
+    border: 1px solid black;
+    text-align: center;
+    padding: 100px;
+    margin: 10px;
+}
+.logcontainer{
+    display:flex;
+    justify-content: center;
+}
+.login input{
+    margin: 10px;
+    padding: 10px;
+}
+.login button{
+    width:190px;
+    padding: 10px;
+    border-radius:10px;
+}
+.registration {
+    border: 1px solid black;
+    text-align: center;
+    padding: 100px;
+    margin: 10px;
+
+}
+
+.registration input{
+    margin: 10px;
+    padding: 10px;
+}
+#order{
+    padding-right:10px ;
+}
+#hdcart{
+    padding-right: 10px;
+}
+#mpro{
+    padding-right: 10px;
 }
