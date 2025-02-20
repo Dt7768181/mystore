@@ -58,35 +58,37 @@ const displayCart = () => {
 const hideCart = () => {
     divCartBlock.style.left = "100%"
 };
-// function addUser() {
-//     // let name = document.getElementById("name").value;
-//     // let email = document.getElementById("email").value;
-//     // let password = document.getElementById("password").value;
-//     // let dob = document.getElementById("dob").value;
-//     // let user = {
-//     //     name: name,
-//     //     email: email,
-//     //     password: password,
-//     //     dob: dob,
-//     // };
-//     // users.push(user);
-//     showLogin();
-//     // showUsers();
-// }
+function addUser() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let dob = document.getElementById("dob").value;
+    let user = {
+        name: name,
+        email: email,
+        password: password,
+        dob: dob,
+    };
+    users.push(user);
+    showLogin();
+    // showUsers();
+}
 function chkUser() {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
-        if (users[0].email == email && users[0].password == password) {
+    for (let i = 0; i < users.length; i++) {
+        if (users[i].email == email && users[i].password == password) {
             // useremail = email;
             // username = users[i].name;
             // currBalance = users[i].balance;
-            user = users[0]
+            user = users[i];
             showMain();
-            // break;
+            break;
         } else {
             msg.innerHTML = "Access Denied";
         }
     }
+}
 const showMain = () =>{
     let str=`<div class="container">
     <div class="header">
@@ -115,20 +117,20 @@ const showMain = () =>{
     root.innerHTML=str;
     showProducts();
 }
-// function showForm() {
-//     let str = `
-//     <div class="registration">
-//   <h2>Registration Form</h2>
-//   <p><input type="text" id="name" placeholder="Name"></p>
-//   <p><input type="text" id="email" placeholder="Email"></p>
-//   <p><input type="password" id="password" placeholder="Password"></p>
-//   <p><input type="date" id="dob"></p>
-//   <p><button onclick='addUser()'>Submit</button></p>
-//   <p>Already a member?<button onclick='showLogin()'>Login Here</button></p>
-//   </div>
-//   `;
-//     root.innerHTML = str;
-// }
+function showForm() {
+    let str = `
+    <div class="registration">
+  <h2>Registration Form</h2>
+  <p><input type="text" id="name" placeholder="Name"></p>
+  <p><input type="text" id="email" placeholder="Email"></p>
+  <p><input type="password" id="password" placeholder="Password"></p>
+  <p><input type="date" id="dob"></p>
+  <p><button onclick='addUser()'>Submit</button></p>
+  <p>Already a member?<button onclick='showLogin()'>Login Here</button></p>
+  </div>
+  `;
+    root.innerHTML = str;
+}
 function showLogin() {
     let str = `
     <div class="logcontainer">
