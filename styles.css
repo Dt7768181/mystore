@@ -59,6 +59,7 @@
     text-align: center;
     padding: 100px;
     margin: 10px;
+    font-family:"Lucida Sans", Arial, sans-serif;
 }
 .logcontainer{
     display:flex;
