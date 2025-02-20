@@ -5,7 +5,8 @@
 // ];
 let orders=[];
 let users = [];
-let user = {};
+let user = { name:"admin", email:"admin@gmail.com", password:"1" };
+users.push(user);
 let products=[];
 let cart = {};
 let total=0;
@@ -57,47 +58,44 @@ const displayCart = () => {
 const hideCart = () => {
     divCartBlock.style.left = "100%"
 };
-function addUser() {
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-    let dob = document.getElementById("dob").value;
-    let user = {
-        name: name,
-        email: email,
-        password: password,
-        dob: dob,
-        balance: 0,
-    };
-    users.push(user);
-    showLogin();
-    // showUsers();
-}
+// function addUser() {
+//     // let name = document.getElementById("name").value;
+//     // let email = document.getElementById("email").value;
+//     // let password = document.getElementById("password").value;
+//     // let dob = document.getElementById("dob").value;
+//     // let user = {
+//     //     name: name,
+//     //     email: email,
+//     //     password: password,
+//     //     dob: dob,
+//     // };
+//     // users.push(user);
+//     showLogin();
+//     // showUsers();
+// }
 function chkUser() {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
-    for (let i = 0; i < users.length; i++) {
-        if (users[i].email == email && users[i].password == password) {
+        if (users[0].email == email && users[0].password == password) {
             // useremail = email;
             // username = users[i].name;
             // currBalance = users[i].balance;
-            user = users[i]
+            user = users[0]
             showMain();
-            break;
+            // break;
         } else {
             msg.innerHTML = "Access Denied";
         }
     }
-}
 const showMain = () =>{
     let str=`<div class="container">
     <div class="header">
         <h1>My Store</h1>
         <div class="navi">
-        <h4 onclick="showProducts()" id="mpro">Products</h4>
-        <h4 onclick="showOrders()" id="order">Orders</h4>
-        <h4 onclick="displayCart()" id="hdcart">Cart:<span id="items"></span></h4>
-        <h4 onclick="showLogin()">Logout</h4>
+        <img src="assets/images/box-open-full.png" width="30px" height="30px" onclick="showProducts()" id="icons">
+        <img src="assets/images/list.png" width="30px" height="30px" onclick="showOrders()" id="icons">
+        <img src="assets/images/cart-arrow-down.png" onclick="displayCart()" id="icons" width="30px" height="30px">:<span id="items"></span>
+        <img src="assets/images/sign-out-alt.png" onclick="showLogin()" id="icons" width="30px" height="30px">
         </div>
     </div>
 
@@ -117,20 +115,20 @@ const showMain = () =>{
     root.innerHTML=str;
     showProducts();
 }
-function showForm() {
-    let str = `
-    <div class="registration">  
-  <h2>Registration Form</h2>
-  <p><input type="text" id="name" placeholder="Name"></p>
-  <p><input type="text" id="email" placeholder="Email"></p>
-  <p><input type="password" id="password" placeholder="Password"></p>
-  <p><input type="date" id="dob"></p>
-  <p><button onclick='addUser()'>Submit</button></p>
-  <p>Already a member?<button onclick='showLogin()'>Login Here</button></p>
-  </div>
-  `;
-    root.innerHTML = str;
-}
+// function showForm() {
+//     let str = `
+//     <div class="registration">
+//   <h2>Registration Form</h2>
+//   <p><input type="text" id="name" placeholder="Name"></p>
+//   <p><input type="text" id="email" placeholder="Email"></p>
+//   <p><input type="password" id="password" placeholder="Password"></p>
+//   <p><input type="date" id="dob"></p>
+//   <p><button onclick='addUser()'>Submit</button></p>
+//   <p>Already a member?<button onclick='showLogin()'>Login Here</button></p>
+//   </div>
+//   `;
+//     root.innerHTML = str;
+// }
 function showLogin() {
     let str = `
     <div class="logcontainer">
@@ -158,7 +156,7 @@ const showProducts = () => {
             <h3>${value.name}</h3>
             <h4>${value.price}</h4>
             <p>${value.desc}</p>
-            <button onclick=addToCart(${value.id}) class="btncart">Add to Cart</button>
+            <button onclick=addToCart(${value.id}) class="btncart"><img src="assets/images/shopping-cart-add.png" width="13px" height="13px" style="padding-right:10px;">Add to Cart</button>
             </div>
           `;
         });
