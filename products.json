@@ -1,54 +1,63 @@
 [
   {
     "id": 1,
+    "image":"https://picsum.photos/id/23/286/180",
     "name": "Product 1",
     "desc": "Description of the product. Description of the product. ",
     "price": 25
   },
   {
     "id": 2,
+    "image":"https://picsum.photos/id/30/286/180",
     "name": "Product 2",
     "desc": "Description of the product. Description of the product. ",
     "price": 45
   },
   {
     "id": 3,
+    "image":"https://picsum.photos/id/36/286/180",
     "name": "Product 3",
     "desc": "Description of the product. Description of the product. ",
     "price": 30
   },
   {
     "id": 4,
+    "image":"https://picsum.photos/id/39/286/180",
     "name": "Product 4",
     "desc": "Description of the product. Description of the product. ",
     "price": 60
   },
   {
     "id": 5,
+    "image":"https://picsum.photos/id/96/286/180",
     "name": "Product 5",
     "desc": "Description of the product. Description of the product. ",
     "price": 30
   },
   {
     "id": 6,
+    "image":"https://picsum.photos/id/119/286/180",
     "name": "Product 6",
     "desc": "Description of the product. Description of the product. ",
     "price": 45
   },
   {
     "id": 7,
+    "image":"https://picsum.photos/id/157/286/180",
     "name": "Product 7",
     "desc": "Description of the product. Description of the product. ",
     "price": 40
   },
   {
     "id": 8,
+    "image":"https://picsum.photos/id/160/286/180",
     "name": "Product 8",
     "desc": "Description of the product. Description of the product. ",
     "price": 75
   },
   {
     "id": 9,
+    "image":"https://picsum.photos/id/175/286/180",
     "name": "Product 9",
     "desc": "Description of the product. Description of the product. ",
     "price": 95

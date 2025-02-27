@@ -90,7 +90,7 @@ function chkUser() {
     }
 }
 const showMain = () =>{
-    let str=`<div class="container">
+    let str=`<div class="container-fluid">
     <div class="header">
         <h1>My Store</h1>
         <div class="navi">
@@ -148,24 +148,28 @@ function showLogin() {
 }
 const showProducts = () => {
     fetch("products.json")
-        .then((res)=>res.json())
-        .then((data)=>(products=data))
-        .then(()=>{
-        let str="<div class='row'>";
+      .then((res) => res.json())
+      .then((data) => (products = data))
+      .then(() => {
+        let str = "<div class='row'>";
         products.map((value) => {
-            str += `
-            <div class='box'>
-            <h3>${value.name}</h3>
-            <h4>${value.price}</h4>
-            <p>${value.desc}</p>
-            <button onclick=addToCart(${value.id}) class="btncart"><img src="assets/images/shopping-cart-add.png" width="13px" height="13px" style="padding-right:10px;">Add to Cart</button>
+          str += `
+            <div class="col-md-4 mb-4">
+              <div class="card">
+                <img src="${value.image}" class="card-img-top" alt="${value.name}">
+                <div class="card-body">
+                  <h5 class="card-title">${value.name}</h5>
+                  <p class="card-text">${value.desc}</p>
+                  <h6 class="card-subtitle mb-2 text-muted">$${value.price}</h6>
+                  <button class="btn btn-primary" onclick="addToCart(${value.id})">Add to Cart</button>
+                </div>
+              </div>
             </div>
           `;
         });
-        str+="</div>";
-        divProducts.innerHTML = str;
-    });
-};
+        divProducts.innerHTML = str + "</div>";
+      });
+  };
 const placeOrder=()=>{
     const obj={
         customer:user.email,
