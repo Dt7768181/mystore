@@ -151,17 +151,19 @@ const showProducts = () => {
       .then((res) => res.json())
       .then((data) => (products = data))
       .then(() => {
-        let str = "<div class='row'>";
+        let str = "<div class='row'>"; 
         products.map((value) => {
           str += `
-            <div class="col-md-4 mb-4">
-              <div class="card">
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+              <div class="card box" style="width: 100%;">
                 <img src="${value.image}" class="card-img-top" alt="${value.name}">
-                <div class="card-body">
+                <div class="card-body"> 
                   <h5 class="card-title">${value.name}</h5>
                   <p class="card-text">${value.desc}</p>
                   <h6 class="card-subtitle mb-2 text-muted">$${value.price}</h6>
-                  <button class="btn btn-primary" onclick="addToCart(${value.id})">Add to Cart</button>
+                  <button class="btn btn-primary" onclick="addToCart(${value.id})">
+                    <img src="assets/images/shopping-cart-add.png"> Add to Cart
+                  </button>
                 </div>
               </div>
             </div>
@@ -169,7 +171,7 @@ const showProducts = () => {
         });
         divProducts.innerHTML = str + "</div>";
       });
-  };
+};
 const placeOrder=()=>{
     const obj={
         customer:user.email,
